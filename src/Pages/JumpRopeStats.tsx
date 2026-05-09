@@ -7,11 +7,6 @@ import {
 } from 'recharts';
 import { Link, useLocation } from 'react-router-dom';
 
-const ICON = {
-  back:   '/src/assets/home.png',
-  edit:   '/src/assets/pencil.png',
-  delete: '/src/assets/delete.png',
-};
 
 const MODAL_STYLES = `
   .log-overlay {
@@ -108,8 +103,6 @@ const MODAL_STYLES = `
     font-family: 'Poppins', sans-serif;
   }
   .add-entry-btn:hover { background: rgba(129,130,99,0.11); }
-  .icon-btn-img { width: 30px; height: 30px; object-fit: contain; opacity: 1.0; }
-
   /* Mobile: entry fields stack */
   @media (max-width: 480px) {
     .entry-card .row.g-2 > .col-4 {
@@ -293,8 +286,7 @@ const JumpRopeStats = () => {
 
       <div className="container mt-5 pb-5">
 
-        <Link to="/dashboard" className="text-decoration-none fw-bold mb-4 d-inline-flex align-items-center gap-2" style={{ color: 'var(--winter-sky)', fontSize: '0.88rem', filter: 'brightness(0.78)' }}>
-          <img src={ICON.back} alt="" className="icon-btn-img" style={{ opacity: 1 }} />
+        <Link to="/dashboard" className="text-decoration-none fw-bold mb-4 d-inline-block" style={{ color: 'var(--winter-sky)', fontSize: '0.88rem', filter: 'brightness(0.78)' }}>
           Back to Dashboard
         </Link>
 
@@ -385,19 +377,17 @@ const JumpRopeStats = () => {
                     </td>
                     <td className="pe-4 text-end text-nowrap">
                       <button
-                        className="btn btn-sm btn-glass me-1 d-inline-flex align-items-center gap-1"
+                        className="btn btn-sm btn-glass me-1"
                         style={{ borderRadius: '8px', padding: '4px 10px', fontSize: '0.78rem' }}
                         onClick={() => openEditForm(log)}
                       >
-                        <img src={ICON.edit} alt="" className="icon-btn-img" />
                         Edit
                       </button>
                       <button
-                        className="btn btn-sm d-inline-flex align-items-center gap-1"
+                        className="btn btn-sm"
                         style={{ borderRadius: '8px', padding: '4px 10px', fontSize: '0.78rem', background: 'rgba(192,57,43,0.08)', color: '#c0392b', border: 'none' }}
                         onClick={() => handleDelete(log.id)}
                       >
-                        <img src={ICON.delete} alt="" className="icon-btn-img" style={{ opacity: 0.75 }} />
                         Delete
                       </button>
                     </td>
