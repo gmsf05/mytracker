@@ -1,0 +1,541 @@
+/* src/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ── CSS Variables ────────────────────────────────────────────── */
+:root {
+  --sage: #818263;
+  --avocado: #6e6f52;
+  --oat: #DCD4C1;
+  --frost: #C7C9F4;
+  --winter-sky: #AFC6E9;
+  --text-primary: #2b2b2b;
+  --text-secondary: #4a4a3a;
+  --text-muted: #8a8a78;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f3e8ff 0%, #fff0f5 50%, #e0f7fa 100%);
+  min-height: 100vh;
+  color: #2b2b2b;
+}
+
+/* ── Glassmorphism ────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
+}
+
+.glass-card h1, .glass-card h2, .glass-card h5, .glass-card h6, .glass-card p, .glass-card span {
+  color: #2b2b2b !important;
+}
+
+.glass-list .list-group-item {
+  background: transparent !important;
+  border-color: rgba(0,0,0,0.05);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  color: #333;
+}
+
+/* ── Activity Rows ────────────────────────────────────────────── */
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 18px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 8px rgba(129,130,99,0.06);
+}
+.activity-row:hover {
+  background: rgba(255,255,255,0.65);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(129,130,99,0.10);
+}
+.activity-row-add {
+  border-style: dashed;
+  background: rgba(255,255,255,0.22) !important;
+}
+.activity-row-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.78rem;
+  flex-shrink: 0;
+}
+.activity-row-label {
+  font-weight: 600; font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.activity-row-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.activity-row-arrow {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Welcome Hero ─────────────────────────────────────────────── */
+.welcome-hero {
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 28px;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+.welcome-hero h1 {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.welcome-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+.welcome-date-chip {
+  display: inline-block;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.80);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+/* ── Tables ───────────────────────────────────────────────────── */
+.glass-table {
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.68);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+.glass-table .table {
+  margin-bottom: 0;
+}
+.glass-table thead th {
+  background: rgba(255,255,255,0.35);
+  border-bottom: 1px solid rgba(129,130,99,0.10);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 14px 12px;
+}
+.glass-table tbody td {
+  border-color: rgba(129,130,99,0.06);
+  padding: 12px;
+  vertical-align: middle;
+}
+.glass-table tbody tr:hover {
+  background: rgba(255,255,255,0.30);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.btn-sage {
+  background: linear-gradient(135deg, var(--sage) 0%, var(--avocado) 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 4px 14px rgba(129,130,99,0.28);
+}
+.btn-sage:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(129,130,99,0.35); }
+
+.btn-glass {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.80);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-glass:hover { background: rgba(255,255,255,0.80); transform: translateY(-1px); }
+
+.btn-winter {
+  background: linear-gradient(135deg, #C7C9F4 0%, #AFC6E9 100%);
+  color: #3d3a7a !important;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-winter:hover { transform: translateY(-1px); }
+
+.btn-icegym {
+  background: linear-gradient(135deg, #DDE7F2 0%, #AFC6E9 100%);
+  color: #2a4a6b !important;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-icegym:hover { transform: translateY(-1px); }
+
+/* ── Filter Groups ────────────────────────────────────────────── */
+.filter-group .btn, .filter-group-winter .btn {
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.72);
+  color: var(--text-muted);
+  font-size: 0.80rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+.filter-group .btn:first-child, .filter-group-winter .btn:first-child { border-radius: 100px 0 0 100px; }
+.filter-group .btn:last-child, .filter-group-winter .btn:last-child { border-radius: 0 100px 100px 0; }
+.filter-group .btn.btn-active, .filter-group-winter .btn.btn-active {
+  background: rgba(255,255,255,0.80);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Month nav */
+.month-nav {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);
+}
+.month-nav button {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 1rem; padding: 0 4px; line-height: 1;
+}
+.month-nav button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ── Badge ────────────────────────────────────────────────────── */
+.badge-winter {
+  background: linear-gradient(135deg, #C7C9F4, #AFC6E9) !important;
+  color: #3d3a7a !important;
+}
+
+/* ── Gradient Activity Colors ─────────────────────────────────── */
+.grad-cheer { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important; color: white !important; border: none !important; }
+.grad-jump { background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%) !important; color: white !important; border: none !important; }
+.grad-gym { background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%) !important; color: white !important; border: none !important; }
+.grad-proj { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%) !important; color: white !important; border: none !important; }
+.grad-custom { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) !important; color: white !important; border: none !important; }
+.grad-add { background: rgba(255,255,255,0.4) !important; border: 2px dashed #a18cd1 !important; color: #555 !important; }
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1024px)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .welcome-hero {
+    padding: 28px 32px;
+  }
+  .welcome-hero h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 768px)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Container breathing room ── */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .mt-5 { margin-top: 24px !important; }
+  .mb-5 { margin-bottom: 28px !important; }
+
+  /* ── Welcome Hero ── */
+  .welcome-hero {
+    padding: 22px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .welcome-hero h1 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .welcome-sub { font-size: 0.80rem; }
+  .welcome-date-chip { font-size: 0.68rem; }
+
+  /* Hero stat pills — stack tightly */
+  .welcome-hero .d-flex.gap-3.mt-4 {
+    gap: 10px !important;
+    flex-wrap: wrap;
+  }
+  .welcome-hero .d-flex.gap-3.mt-4 > div {
+    min-width: calc(50% - 8px) !important;
+    flex: 1 1 calc(50% - 8px);
+    padding: 10px 14px !important;
+  }
+  .welcome-hero .d-flex.gap-3.mt-4 > div > div:first-child {
+    font-size: 1.25rem !important;
+  }
+
+  /* Hero action buttons — wrap neatly */
+  .welcome-hero .d-flex.gap-2.align-self-center {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* ── Glass Card ── */
+  .glass-card {
+    border-radius: 18px !important;
+    padding: 16px !important;
+  }
+  .glass-card.p-4 { padding: 16px !important; }
+  .glass-card.p-5 { padding: 20px !important; }
+
+  /* ── Activity Rows ── */
+  .activity-row {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+  .activity-row-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    font-size: 0.70rem;
+  }
+  .activity-row-label { font-size: 0.86rem; }
+  .activity-row-sub { font-size: 0.70rem; }
+
+  /* ── Section headings ── */
+  h1 { font-size: 1.5rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  h5 { font-size: 0.95rem !important; }
+  h6 { font-size: 0.84rem !important; }
+
+  /* ── Tables — horizontal scroll ── */
+  .glass-table {
+    border-radius: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .glass-table table {
+    min-width: 560px;
+  }
+  .glass-table thead th {
+    font-size: 0.68rem;
+    padding: 10px 10px;
+    white-space: nowrap;
+  }
+  .glass-table tbody td {
+    font-size: 0.80rem;
+    padding: 10px 10px;
+    white-space: nowrap;
+  }
+  .glass-table .ps-4 { padding-left: 12px !important; }
+  .glass-table .pe-4 { padding-right: 12px !important; }
+
+  /* ── Filter group ── */
+  .filter-group, .filter-group-winter {
+    flex-wrap: wrap;
+  }
+  .filter-group .btn, .filter-group-winter .btn {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+  }
+
+  /* ── Buttons ── */
+  .btn-sage, .btn-winter, .btn-icegym, .btn-glass {
+    font-size: 0.82rem !important;
+    padding: 8px 16px !important;
+  }
+
+  /* ── Stat cards row — 2 col on mobile ── */
+  .row.g-3 .col-6 { flex: 0 0 50%; max-width: 50%; }
+  .row.g-3 .col-md-3, .row.g-3 .col-md-4 { flex: 0 0 50%; max-width: 50%; }
+
+  /* ── Charts ── */
+  .recharts-wrapper, .recharts-responsive-container {
+    font-size: 11px;
+  }
+
+  /* ── PPL stats ── */
+  .ppl-stat {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  /* ── Month nav ── */
+  .month-nav {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+  }
+
+  /* ── Header flex areas ── */
+  .d-flex.justify-content-between.align-items-end.mb-5 {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 20px !important;
+  }
+  .d-flex.justify-content-between.align-items-end.mb-5 > div:last-child {
+    width: 100%;
+  }
+  .d-flex.gap-2.align-items-center.flex-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* ── Modal / Log overlays ── */
+  .log-overlay,
+  .gym-form-overlay {
+    padding: 12px !important;
+    align-items: flex-end !important; /* slide up from bottom on small phones */
+  }
+  .log-card,
+  .gym-form-card {
+    border-radius: 24px 24px 0 0 !important;
+    padding: 28px 20px 24px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Logging form card on dashboard */
+  .glass-card.p-5.mx-auto {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    margin-top: 16px !important;
+  }
+
+  /* ── Welcome hero ── */
+  .welcome-hero {
+    padding: 18px 16px;
+  }
+  .welcome-hero h1 {
+    font-size: 1.25rem;
+  }
+  /* Stack hero buttons vertically */
+  .welcome-hero .d-flex.gap-2.align-self-center {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  .welcome-hero .d-flex.gap-2.align-self-center .btn,
+  .welcome-hero .d-flex.gap-2.align-self-center .logout-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Hero stat pills — single column */
+  .welcome-hero .d-flex.gap-3.mt-4 > div {
+    min-width: 100% !important;
+    flex: 1 1 100%;
+  }
+
+  /* ── Stat cards — full width on tiny screens ── */
+  .row.g-3 .col-6,
+  .row.g-3 .col-md-3,
+  .row.g-3 .col-md-4,
+  .row.g-4 .col-md-4,
+  .row.g-4 .col-md-6,
+  .row.g-4 .col-md-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Table scrollable wrapper label ── */
+  .glass-table::before {
+    content: '← scroll →';
+    display: block;
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    padding: 6px 0 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Icon sizes ── */
+  .icon-btn-img { width: 22px !important; height: 22px !important; }
+
+  /* ── Filter group full width ── */
+  .filter-group, .filter-group-winter {
+    width: 100%;
+  }
+  .filter-group .btn, .filter-group-winter .btn {
+    flex: 1;
+    font-size: 0.68rem;
+    padding: 5px 6px;
+  }
+
+  /* Entry cards in jump rope multi-entry modal */
+  .entry-card { padding: 12px !important; }
+  .entry-card .row.g-2 > .col-4 { flex: 0 0 100% !important; max-width: 100% !important; }
+
+  /* Gym form row fields stack */
+  .gym-form-card .row.g-2 > .col-4 { flex: 0 0 100% !important; max-width: 100% !important; }
+
+  /* Cat pills wrap */
+  .cat-pill { font-size: 0.70rem !important; padding: 5px 9px !important; }
+
+  /* PPL cat buttons */
+  .cat-btn { padding: 8px 0 !important; font-size: 0.78rem !important; }
+
+  /* Charts height reduction */
+  .glass-card [style*="height: 380px"] { height: 280px !important; }
+  .glass-card [style*="height: 260px"] { height: 200px !important; }
+  .glass-card [style*="height: 220px"] { height: 180px !important; }
+  .glass-card [style*="height: 200px"] { height: 160px !important; }
+
+  /* Settings card */
+  .settings-section { padding: 24px 20px 20px !important; }
+
+  /* Login card */
+  .login-card { padding: 32px 24px 28px !important; border-radius: 20px !important; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   UTILITY — Safe area for notched phones
+   ════════════════════════════════════════════════════════════════ */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-5 {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom)) !important;
+  }
+  .log-card,
+  .gym-form-card {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+  }
+}
