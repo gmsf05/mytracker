@@ -68,8 +68,8 @@ const MODAL_STYLES = `
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .log-input:focus {
-    border-color: var(--sage) !important;
-    box-shadow: 0 0 0 3px rgba(129,130,99,0.12) !important;
+    border-color: var(--winter-sky) !important;
+    box-shadow: 0 0 0 3px rgba(175,198,233,0.18) !important;
   }
   .cat-pill {
     padding: 6px 12px; border-radius: 10px;
@@ -131,10 +131,10 @@ interface Entry {
 const EVENTS = ['SRPF','WPF','SRIF','Double Unders','Triple Unders','DDF','Freestyle Runs','General'];
 
 const COLORS: Record<string, string> = {
-  'SRPF': '#818263', 'WPF': '#DDBAAE', 'SRIF': '#AFC6E9',
+  'SRPF': '#AFC6E9', 'WPF': '#DDBAAE', 'SRIF': '#C7C9F4',
   'Speed': '#DDE7F2', 'Single Unders': '#EFD7CF',
   'Double Unders': '#C7C9F4', 'Triple Unders': '#F5D6E7',
-  'DDF': '#F8AFCF', 'Freestyle Runs': '#a8bfa0', 'General': '#c8c4bc',
+  'DDF': '#F8AFCF', 'Freestyle Runs': '#B8D4F0', 'General': '#c8c4bc',
 };
 
 const makeEntry = (event = 'SRPF'): Entry => ({
@@ -293,7 +293,7 @@ const JumpRopeStats = () => {
 
       <div className="container mt-5 pb-5">
 
-        <Link to="/dashboard" className="text-decoration-none fw-bold mb-4 d-inline-flex align-items-center gap-2" style={{ color: 'var(--sage)', fontSize: '0.88rem' }}>
+        <Link to="/dashboard" className="text-decoration-none fw-bold mb-4 d-inline-flex align-items-center gap-2" style={{ color: 'var(--winter-sky)', fontSize: '0.88rem', filter: 'brightness(0.78)' }}>
           <img src={ICON.back} alt="" className="icon-btn-img" style={{ opacity: 1 }} />
           Back to Dashboard
         </Link>
@@ -317,7 +317,7 @@ const JumpRopeStats = () => {
                 <button key={tf} className={`btn ${timeFilter===tf?'btn-active':''}`} onClick={() => setTimeFilter(tf)}>{tf}</button>
               ))}
             </div>
-            <button className="btn btn-sage px-4" style={{ fontSize: '0.88rem' }} onClick={openNewSession}>Log Session</button>
+            <button className="btn btn-icegym px-4" style={{ fontSize: '0.88rem' }} onClick={openNewSession}>Log Session</button>
           </div>
         </div>
 
@@ -329,9 +329,9 @@ const JumpRopeStats = () => {
             { label: `Personal Best (${viewTitle})`, val: pbSession, sage: true },
           ].map((s, i) => (
             <div key={i} className="col-12 col-md-4">
-              <div className="glass-card p-4 text-center" style={s.gradient ? { background: 'linear-gradient(135deg,var(--sage),var(--avocado)) !important' } : {}}>
+              <div className="glass-card p-4 text-center" style={s.gradient ? { background: 'linear-gradient(135deg,var(--winter-sky),#7ab3d8) !important' } : {}}>
                 <p style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: s.gradient ? 'rgba(255,255,255,0.70)' : 'var(--text-muted)', marginBottom: '8px' }}>{s.label}</p>
-                <h1 style={{ fontWeight: 700, fontSize: '2.8rem', color: s.gradient ? '#fff' : s.sage ? 'var(--sage)' : 'var(--text-primary)', margin: 0 }}>{s.val}</h1>
+                <h1 style={{ fontWeight: 700, fontSize: '2.8rem', color: s.gradient ? '#fff' : s.sage ? 'var(--winter-sky)' : 'var(--text-primary)', margin: 0 }}>{s.val}</h1>
               </div>
             </div>
           ))}
@@ -449,7 +449,7 @@ const JumpRopeStats = () => {
                   <label className="log-label">Notes</label>
                   <input className="log-input" value={editNotes} onChange={e => setEditNotes(e.target.value)} placeholder="How did it feel?" />
                 </div>
-                <button className="btn btn-sage w-100 mb-2" style={{ padding: '12px', borderRadius: '100px', fontWeight: 700 }} onClick={handleSaveEdit} disabled={isSaving || !editReps}>
+                <button className="btn btn-icegym w-100 mb-2" style={{ padding: '12px', borderRadius: '100px', fontWeight: 700 }} onClick={handleSaveEdit} disabled={isSaving || !editReps}>
                   {isSaving ? 'Saving...' : 'Update Entry'}
                 </button>
                 <button className="btn w-100" style={{ color: 'var(--text-muted)', fontSize: '0.88rem' }} onClick={closeModal}>Cancel</button>
@@ -515,7 +515,7 @@ const JumpRopeStats = () => {
                 )}
 
                 <button
-                  className="btn btn-sage w-100 mb-2"
+                  className="btn btn-icegym w-100 mb-2"
                   style={{ padding: '13px', borderRadius: '100px', fontWeight: 700, fontSize: '0.95rem' }}
                   onClick={handleSaveSession}
                   disabled={isSaving || entries.every(e => !e.reps)}
