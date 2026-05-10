@@ -30,6 +30,7 @@ function App() {
         {/* 1. Public Pages */}
         <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Login />} />
 
         {/* 2. Protected App Pages (Requires Login) */}
         <Route
