@@ -11,6 +11,17 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const handleDemoLogin = async () => {
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({
+      email: 'demo@mytracker.app',
+      password: 'Demo1234!',
+    });
+    if (error) alert('Demo account not set up yet. Please check back soon!');
+    else navigate('/dashboard');
+    setLoading(false);
+  };
+
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -173,6 +184,25 @@ const Login = () => {
           font-weight: 500;
           white-space: nowrap;
         }
+        .demo-btn {
+          width: 100%;
+          background: rgba(175,198,233,0.18);
+          color: var(--text-secondary);
+          border: 1.5px dashed rgba(175,198,233,0.60);
+          border-radius: 100px;
+          padding: 13px;
+          font-size: 0.90rem;
+          font-weight: 600;
+          font-family: 'DM Sans', sans-serif;
+          cursor: pointer;
+          transition: background 0.18s, border-color 0.18s;
+          letter-spacing: 0.01em;
+        }
+        .demo-btn:hover:not(:disabled) {
+          background: rgba(175,198,233,0.30);
+          border-color: rgba(175,198,233,0.90);
+        }
+        .demo-btn:disabled { opacity: 0.65; cursor: not-allowed; }
       `}</style>
 
       <div className="login-page">
@@ -257,6 +287,19 @@ const Login = () => {
               {isSignUp ? 'Sign in instead' : 'Create an account'}
             </button>
           </div>
+
+          <div className="login-divider" style={{ marginTop: '28px' }}>
+            <span>or explore without an account</span>
+          </div>
+
+          <button
+            type="button"
+            className="demo-btn"
+            onClick={handleDemoLogin}
+            disabled={loading}
+          >
+            Try Demo
+          </button>
         </div>
       </div>
     </>
