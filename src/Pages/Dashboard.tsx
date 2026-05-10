@@ -12,14 +12,6 @@ import {
 import StatCard from '../components/StatCard';
 import HighestMonthCard from '../components/HighestMonthCard';
 
-/* ─── Assets ─────────────────────────────────────────────────── */
-const ICON = {
-  settings: '/src/assets/settings.png',
-  edit:     '/src/assets/pencil.png',
-  delete:   '/src/assets/delete.png',
-  back:     '/src/assets/home.png',
-};
-
 /* ─── Constants ──────────────────────────────────────────────── */
 const PIE_COLORS = ['#818263', '#C2C395', '#DDBAAE', '#C7C9F4', '#DCD4C1', '#F5D6E7'];
 
@@ -92,10 +84,6 @@ const SectionLabel = ({ children, hint }: { children: React.ReactNode; hint?: st
     </p>
     {hint && <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', opacity: 0.6 }}>{hint}</span>}
   </div>
-);
-
-const Ico = ({ src, size = 13 }: { src: string; size?: number }) => (
-  <img src={src} alt="" style={{ width: size, height: size, objectFit: 'contain', opacity: 0.72, flexShrink: 0 }} />
 );
 
 /* ═══════════════════════════════════════════════════════════════ */
@@ -278,8 +266,7 @@ const Dashboard = () => {
                   <button className="btn-glass btn px-3 d-inline-flex align-items-center gap-1" style={{ fontSize: '0.82rem' }} onClick={() => navigate('/analytics')}>
                     Data Ledger
                   </button>
-                  <button className="btn-glass btn px-3 d-inline-flex align-items-center gap-1" style={{ fontSize: '0.82rem' }} onClick={() => navigate('/settings')}>
-                    <Ico src={ICON.settings} />
+                  <button className="btn-glass btn px-3" style={{ fontSize: '0.82rem' }} onClick={() => navigate('/settings')}>
                     Settings
                   </button>
                   <button className="logout-btn" onClick={handleLogout}>Sign Out</button>
